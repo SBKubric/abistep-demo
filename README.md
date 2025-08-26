@@ -26,6 +26,8 @@ app/
 
 ```bash
 # Install dependencies
+make install
+# or
 uv sync
 ```
 
@@ -33,9 +35,13 @@ uv sync
 
 ```bash
 # Development server
+make dev
+# or
 uv run fastapi dev app/main.py
 
 # Production server
+make run
+# or
 uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
@@ -63,7 +69,32 @@ curl -X POST "http://localhost:8000/transfer" \
 ## Testing
 
 ```bash
+# Run tests
+make test
+# or
 uv run pytest test_api.py -v
+
+# Run tests with coverage
+make test-coverage
+
+# Run all checks (lint + test)
+make check
+```
+
+## Development Commands
+
+```bash
+# See all available commands
+make help
+
+# Format code
+make format
+
+# Lint code
+make lint
+
+# Clean cache files
+make clean
 ```
 
 ## API Documentation

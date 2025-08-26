@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional
 from .entities import User
 
 
@@ -9,13 +8,13 @@ class UserRepository(ABC):
         pass
 
     @abstractmethod
-    async def find_by_id(self, user_id: int) -> Optional[User]:
+    async def find_by_id(self, user_id: int) -> User | None:
         pass
 
     @abstractmethod
-    async def find_by_email(self, email: str) -> Optional[User]:
+    async def find_by_email(self, email: str) -> User | None:
         pass
 
     @abstractmethod
-    async def find_all(self) -> List[User]:
+    async def find_all(self) -> list[User]:
         pass
